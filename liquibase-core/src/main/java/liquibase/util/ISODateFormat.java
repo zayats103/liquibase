@@ -35,7 +35,9 @@ public class ISODateFormat {
                 }
             }
             sb.append('.');
-            sb.append(nanosString.substring(0, lastNotNullIndex + 1));
+            sb.append(nanosString, 0, lastNotNullIndex + 1);
+        } else {
+            sb.append(".0");
         }
         return sb.toString();
     }
